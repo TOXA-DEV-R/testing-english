@@ -1,0 +1,106 @@
+/** @format */
+
+html {
+    font-family: sans-serif;
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+    font-size: 100%;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: unset;
+
+}
+
+.navbar__brand {
+    font-size: 1.25rem;
+    color: rgba(0, 0, 0, .9);
+}
+
+.container__app {
+    max-width: 651px;
+    width: 100%;
+}
+
+.slection__numberOf-questions {
+    color: rgba(0, 0, 0, 0.54);
+    height: 12px;
+    font-size: 0.8rem;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 400;
+    line-height: 0.8rem;
+    letter-spacing: 0.00938em;
+}
+
+.form__selection {
+    &:focus {
+        background-color: rgba(0, 0, 0, 0.05);
+    }
+}
+
+.testing__buttons-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.testing__btn {
+    min-width: calc(627px / 10);
+    color: black;
+    border: 1px solid rgba(0, 0, 0, 0.23);
+    font-size: 0.9rem;
+    transition: none;
+    flex: unset !important;
+
+    &.btn-primary {
+        color: white;
+    }
+
+    &:hover {
+        border: 1px solid rgba(0, 0, 0, 0.23);
+        color: black;
+        background-color: rgba(0, 0, 0, 0.04);
+    }
+
+    &:focus {
+        color: white;
+        background-color: #0d6efd;
+    }
+}
+
+
+.spinner__container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.list-group-item {
+    cursor: pointer;
+    background-color: transparent;
+    transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.04);
+    }
+
+}
+
+
+.testing__btns-disayble {
+    background-color: rgb(145, 145, 145);
+
+    &:hover {
+        background-color: rgb(145, 145, 145);
+    }
+}
+
+.testing__btn-checked {
+    background-color: rgba(0, 0, 0, 0.04);
+    color: black !important;
+}
