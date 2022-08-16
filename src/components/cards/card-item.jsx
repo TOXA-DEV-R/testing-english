@@ -16,6 +16,7 @@ function CardItem({ item, listGroupItemHandle, indx }) {
     } else {
       if (isTrue && isShowingSubmit) return "bg-success";
       if (isClick) return "bg-warning";
+      if (isTrue) return "bg-success";
     }
 
     return "";
