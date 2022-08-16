@@ -1,6 +1,6 @@
 /** @format */
 
-import React, { memo, useState } from "react";
+import React, { memo, useCallback, useState } from "react";
 import { Button, Card, ListGroup, Spinner } from "react-bootstrap";
 import parse from "html-react-parser";
 import { useDispatch, useSelector } from "react-redux";
@@ -66,6 +66,24 @@ function CardsContainer({
     return "bg-secondary";
   }
 
+  const cardBody = useCallback(
+    (data, questionNumber) => {
+      const cardItem = data[questionNumber].incorrect_answers?.map(
+        (item, indx) => (
+          <CardItem
+            item={item}
+            key={indx}
+            indx={indx}
+            listGroupItemHandle={listGroupItemHandle}
+          />
+        )
+      );
+
+      return cardItem;
+    },
+    [data, questionNumber]
+  );
+
   if (!data.length > 0) {
     return (
       <div className="spinner__container">
@@ -82,14 +100,7 @@ function CardsContainer({
         </Card.Header>
 
         <Card.Body as={ListGroup} className="rounded-0">
-          {data[questionNumber]?.incorrect_answers?.map((item, indx) => (
-            <CardItem
-              item={item}
-              key={indx}
-              indx={indx}
-              listGroupItemHandle={listGroupItemHandle}
-            />
-          ))}
+          {cardBody(data, questionNumber)}
         </Card.Body>
 
         <Card.Footer className="d-flex justify-content-between">

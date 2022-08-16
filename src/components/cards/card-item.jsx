@@ -12,6 +12,7 @@ function CardItem({ item, listGroupItemHandle, indx }) {
     const { isClick, forSubmit, isTrue, isShowingSubmit } = item;
     if (!isFinished) {
       if (isTrue && isShowingSubmit) return "bg-success";
+      if (!isShowingSubmit && isClick && forSubmit) return "bg-warning";
       if (isClick) return "bg-light";
     } else {
       if (isTrue && isShowingSubmit) return "bg-success";
